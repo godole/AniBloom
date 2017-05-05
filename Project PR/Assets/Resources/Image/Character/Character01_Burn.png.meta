@@ -1,0 +1,268 @@
+fileFormatVersion: 2
+guid: 251c437380688244a93d5f4fd8b2262b
+timeCreated: 1492163036
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Character01_Burn_0
+    21300002: Character01_Burn_1
+    21300004: Character01_Burn_2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Character01_Burn_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 430
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -111, y: -185}
+        - {x: -112, y: -188}
+        - {x: -108, y: -197}
+        - {x: -105, y: -199}
+        - {x: -102, y: -198}
+        - {x: -102, y: -193}
+        - {x: -108, y: -185}
+      - - {x: 39, y: -32}
+        - {x: 101, y: -1}
+        - {x: 144, y: 55}
+        - {x: 156, y: 102}
+        - {x: 156, y: 106}
+        - {x: 153, y: 112}
+        - {x: 156, y: 115}
+        - {x: 156, y: 154}
+        - {x: 138, y: 165}
+        - {x: 122, y: 228}
+        - {x: 108, y: 247}
+        - {x: 33, y: 249}
+        - {x: -17, y: 257}
+        - {x: -23, y: 260}
+        - {x: -59, y: 260}
+        - {x: -101, y: 254}
+        - {x: -124, y: 243}
+        - {x: -128, y: 190}
+        - {x: -125, y: 148}
+        - {x: -155, y: 110}
+        - {x: -155, y: 106}
+        - {x: -154, y: 103}
+        - {x: -149, y: 104}
+        - {x: -155, y: 96}
+        - {x: -155, y: 91}
+        - {x: -153, y: 87}
+        - {x: -138, y: -31}
+        - {x: -145, y: -52}
+        - {x: -134, y: -116}
+        - {x: -68, y: -174}
+        - {x: -57, y: -173}
+        - {x: -32, y: -148}
+        - {x: 21, y: -192}
+        - {x: 31, y: -192}
+        - {x: 64, y: -135}
+        - {x: 78, y: -109}
+        - {x: 64, y: -81}
+      - - {x: -81, y: -175}
+        - {x: -77, y: -180}
+        - {x: -74, y: -179}
+        - {x: -74, y: -176}
+        - {x: -78, y: -172}
+        - {x: -80, y: -172}
+      - - {x: -121, y: -133}
+        - {x: -118, y: -136}
+        - {x: -115, y: -135}
+        - {x: -115, y: -133}
+        - {x: -118, y: -130}
+        - {x: -120, y: -130}
+      - - {x: -165, y: -32}
+        - {x: -163, y: -34}
+        - {x: -160, y: -33}
+        - {x: -160, y: -28}
+        - {x: -162, y: -26}
+        - {x: -165, y: -27}
+    - name: Character01_Burn_1
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 0
+        width: 430
+        height: 520
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 92, y: -32}
+        - {x: 154, y: -1}
+        - {x: 197, y: 55}
+        - {x: 209, y: 102}
+        - {x: 209, y: 106}
+        - {x: 206, y: 112}
+        - {x: 209, y: 115}
+        - {x: 209, y: 154}
+        - {x: 191, y: 165}
+        - {x: 180, y: 192}
+        - {x: 175, y: 228}
+        - {x: 161, y: 247}
+        - {x: 85, y: 241}
+        - {x: 51, y: 255}
+        - {x: 42, y: 252}
+        - {x: 33, y: 260}
+        - {x: -1, y: 260}
+        - {x: -4, y: 259}
+        - {x: -61, y: 254}
+        - {x: -73, y: 223}
+        - {x: -62, y: 174}
+        - {x: -104, y: 109}
+        - {x: -101, y: 103}
+        - {x: -96, y: 104}
+        - {x: -104, y: 94}
+        - {x: -100, y: 87}
+        - {x: -48, y: 30}
+        - {x: -69, y: 2}
+        - {x: -86, y: -31}
+        - {x: -119, y: -95}
+        - {x: -119, y: -180}
+        - {x: -74, y: -192}
+        - {x: -50, y: -192}
+        - {x: 6, y: -177}
+        - {x: 22, y: -147}
+        - {x: 70, y: -192}
+        - {x: 83, y: -192}
+        - {x: 89, y: -190}
+        - {x: 119, y: -136}
+        - {x: 130, y: -94}
+        - {x: 98, y: -71}
+      - - {x: -14, y: -181}
+        - {x: -12, y: -183}
+        - {x: -9, y: -182}
+        - {x: -9, y: -179}
+        - {x: -11, y: -177}
+        - {x: -14, y: -178}
+      - - {x: -112, y: -32}
+        - {x: -110, y: -34}
+        - {x: -107, y: -33}
+        - {x: -107, y: -28}
+        - {x: -109, y: -26}
+        - {x: -112, y: -27}
+    - name: Character01_Burn_2
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 0
+        width: 430
+        height: 520
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 82, y: -197}
+        - {x: 91, y: -183}
+        - {x: 128, y: -109}
+        - {x: 127, y: -95}
+        - {x: 98, y: -71}
+        - {x: 92, y: -32}
+        - {x: 154, y: -1}
+        - {x: 197, y: 55}
+        - {x: 209, y: 102}
+        - {x: 209, y: 106}
+        - {x: 206, y: 112}
+        - {x: 209, y: 115}
+        - {x: 209, y: 154}
+        - {x: 191, y: 165}
+        - {x: 180, y: 192}
+        - {x: 175, y: 228}
+        - {x: 161, y: 247}
+        - {x: 85, y: 241}
+        - {x: 51, y: 255}
+        - {x: 42, y: 252}
+        - {x: 33, y: 260}
+        - {x: -1, y: 260}
+        - {x: -4, y: 259}
+        - {x: -61, y: 254}
+        - {x: -73, y: 223}
+        - {x: -62, y: 174}
+        - {x: -104, y: 109}
+        - {x: -101, y: 103}
+        - {x: -96, y: 104}
+        - {x: -104, y: 94}
+        - {x: -100, y: 87}
+        - {x: -48, y: 30}
+        - {x: -69, y: 2}
+        - {x: -111, y: -77}
+        - {x: -137, y: -150}
+        - {x: -137, y: -195}
+        - {x: -135, y: -201}
+        - {x: -115, y: -230}
+        - {x: -71, y: -230}
+        - {x: -38, y: -212}
+        - {x: 2, y: -174}
+        - {x: 27, y: -157}
+      - - {x: -37, y: -208}
+        - {x: -35, y: -210}
+        - {x: -32, y: -209}
+        - {x: -32, y: -206}
+        - {x: -34, y: -204}
+        - {x: -37, y: -205}
+      - - {x: -14, y: -181}
+        - {x: -12, y: -183}
+        - {x: -9, y: -182}
+        - {x: -9, y: -179}
+        - {x: -11, y: -177}
+        - {x: -14, y: -178}
+      - - {x: -112, y: -32}
+        - {x: -110, y: -34}
+        - {x: -107, y: -33}
+        - {x: -107, y: -28}
+        - {x: -109, y: -26}
+        - {x: -112, y: -27}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
