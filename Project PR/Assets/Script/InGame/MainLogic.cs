@@ -64,7 +64,6 @@ public class MainLogic : MonoBehaviour {
 
     public void GameReset()
     {
-        JumpCheck.m_ColliderCount = 0;
         SceneManager.LoadScene("InGame");
         //LopeManager.getInstance().Clear();
         //m_Player.Reset();

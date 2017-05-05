@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class AirState : IState {
 
@@ -20,41 +21,37 @@ public class AirState : IState {
             m_PlayerControl.gameObject.transform.localPosition = new Vector3(m_PlayerControl.gameObject.transform.localPosition.x, 600, m_PlayerControl.gameObject.transform.localPosition.z);
     }
 
-    public void OnCollisionEnter2D(Collision2D col)
-    {
-    }
-
-    public void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.transform.tag == "Obstacle")
-            m_PlayerControl.Hit();
-
-        else if(col.transform.tag == "DoubleJump")
-        {
-            m_PlayerControl.JumpCount++;
-        }
-    }
-
     public void Jump()
     {
         m_PlayerControl.Jump(false);
     }
 
-    public void GroundCollision(Collider2D col)
+    public void OnTriggerEnter2D(Collider2D col, Collider2D target)
     {
-        m_PlayerControl.ChangeState(new RunningState(m_PlayerControl, col));
+        if(col.transform.tag == "Player")
+        {
+            if (target.transform.tag == "Obstacle")
+                m_PlayerControl.Hit();
+
+            else if (target.transform.tag == "DoubleJump")
+                m_PlayerControl.JumpCount++;
+
+            else if (target.transform.tag == "Fever")
+                m_PlayerControl.ChangeState(new FeverState(m_PlayerControl));
+
+            else if (target.transform.tag == "Ground")
+                m_PlayerControl.GroundCollisionEnter(target);
+
+            else if (target.transform.tag == "Slide")
+                m_PlayerControl.SlideCollisionEnter(target);
+
+            else if (target.transform.tag == "Rope")
+                m_PlayerControl.ChangeState(new LopeState(m_PlayerControl, target));
+        }
     }
 
-    public void GroundCollisionExit(Collider2D col)
+    public void OnTriggerExit2D(Collider2D col, Collider2D target)
     {
-    }
-
-    public void SlideCollision(Collider2D col)
-    {
-        m_PlayerControl.ChangeState(new SlideState(m_PlayerControl, col));
-    }
-
-    public void SlideCollisionExit(Collider2D col)
-    {
+        
     }
 }

@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.3.4f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -220,17 +222,13 @@
     <Compile Include="Assets\Script\InGame\Obstacle\Platform.cs" />
     <Compile Include="Assets\Script\InGame\Obstacle\Rope.cs" />
     <Compile Include="Assets\Script\InGame\Obstacle\Spring.cs" />
-    <Compile Include="Assets\Script\InGame\Player\JumpCheck.cs" />
-    <Compile Include="Assets\Script\InGame\Player\LineCheck.cs" />
-    <Compile Include="Assets\Script\InGame\Player\LopeCheck.cs" />
     <Compile Include="Assets\Script\InGame\Player\PlayerControl.cs" />
     <Compile Include="Assets\Script\InGame\Player\PlayerState\AirState.cs" />
-    <Compile Include="Assets\Script\InGame\Player\PlayerState\BoostState.cs" />
+    <Compile Include="Assets\Script\InGame\Player\PlayerState\FeverState.cs" />
     <Compile Include="Assets\Script\InGame\Player\PlayerState\IState.cs" />
     <Compile Include="Assets\Script\InGame\Player\PlayerState\LopeState.cs" />
     <Compile Include="Assets\Script\InGame\Player\PlayerState\RunningState.cs" />
     <Compile Include="Assets\Script\InGame\Player\PlayerState\SlideState.cs" />
-    <Compile Include="Assets\Script\InGame\Player\PlayerState\SpringState.cs" />
     <Compile Include="Assets\Script\InGame\SlideLine.cs" />
     <Compile Include="Assets\Script\MainScene.cs" />
     <Compile Include="Assets\Script\ScreenResolution.cs" />

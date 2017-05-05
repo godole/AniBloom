@@ -7,19 +7,17 @@ public class LopeState : IState {
     PlayerControl m_PlayerControl;
 
     float m_LopeValue = 0;
-    Vector2 m_LopeCollider;
     float linelength;
     double m_StartAngle;
     GameObject m_Lope = null;
     Vector2 m_LopeStartPosition;
 
-    public LopeState(PlayerControl pc, Collider2D col, LopeCheck check)
+    public LopeState(PlayerControl pc, Collider2D col)
     {
         m_PlayerControl = pc;
         m_LopeStartPosition = pc.gameObject.transform.localPosition;
         m_Lope = col.gameObject;
         m_StartAngle = m_Lope.transform.parent.gameObject.GetComponent<Rope>().Angle - 180;
-        m_LopeCollider = check.gameObject.transform.position;
         linelength = (pc.gameObject.transform.position - m_Lope.gameObject.transform.position).magnitude;
     }
 
@@ -41,57 +39,17 @@ public class LopeState : IState {
         }
     }
 
-    public void OnCollisionEnter2D(Collision2D col)
-    {
-
-    }
-
-    public void OnTriggerEnter2D(Collider2D col)
-    {
-        switch (col.transform.tag)
-        {
-            case "Bell":
-                m_PlayerControl.ChangeState(new BoostState(m_PlayerControl));
-                m_PlayerControl.ObstacleTriggerCheck(col);
-                break;
-
-            case "Obstacle":
-                m_PlayerControl.Hit();
-                break;
-        }
-    }
-
     public void Jump()
     {
     }
 
-    public void GroundCollision(Collision2D col)
+    public void OnTriggerEnter2D(Collider2D col, Collider2D target)
     {
-
+        if (col.transform.tag == "Player" && target.transform.tag == "Obstacle")
+            m_PlayerControl.Hit();
     }
 
-    public void GroundCollisionExit(Collision2D col)
+    public void OnTriggerExit2D(Collider2D col, Collider2D target)
     {
-
-    }
-
-    public void SlideCollision(Collider2D col)
-    {
-
-    }
-
-    public void SlideCollisionExit(Collider2D col)
-    {
-
-    }
-
-    public void GroundCollision(Collider2D col)
-    {
-        m_PlayerControl.ChangeState(new RunningState(m_PlayerControl, col));
-    }
-
-    public void GroundCollisionExit(Collider2D col)
-    {
-        m_PlayerControl.ChangeState(new AirState(m_PlayerControl));
     }
 }

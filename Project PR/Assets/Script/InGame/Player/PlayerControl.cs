@@ -15,6 +15,7 @@ public class PlayerControl : MonoBehaviour {
     ObstacleManager _ObstacleManager;
 
     Rigidbody2D m_RigidBody;
+    BoxCollider2D _Collider;
 
     float m_MaxSpeed;
     [SerializeField]
@@ -36,6 +37,8 @@ public class PlayerControl : MonoBehaviour {
 
     public Animator _Animator { get; set; }
 
+    public int CollisionCount { get; set; }
+
     public enum PlayerAnimation
     {
         Fail = 0,
@@ -56,11 +59,13 @@ public class PlayerControl : MonoBehaviour {
         _Combo = GameObject.Find("Combo").GetComponent<UILabel>();
         _ObstacleManager = GameObject.Find("Obstacle Manager").GetComponent<ObstacleManager>();
         m_RigidBody = GetComponent<Rigidbody2D>();
+        _Collider = GetComponent<BoxCollider2D>();
         m_JumpSound = GetComponent<AudioSource>();
         _Animator = GetComponent<Animator>();
         m_State = new AirState(this);
         MoveVector = new Vector2(m_MaxSpeed, 0.0f);
         JumpCount = 1;
+        CollisionCount = 0;
     }
 
     public void setMoveSpeed(float speed)
@@ -72,6 +77,7 @@ public class PlayerControl : MonoBehaviour {
     void Update()
     {
         _Combo.text = _ComboCount.ToString();
+        _JudgeText.text = CollisionCount.ToString();
         m_State.StateUpdate();
     }
 
@@ -86,6 +92,7 @@ public class PlayerControl : MonoBehaviour {
         MoveVector += new Vector2(0, JumpForce);
         GravityValue = JumpForce;
         ChangeState(new AirState(this));
+        CollisionCount = 0;
         JumpCount--;
     }
 
@@ -117,38 +124,38 @@ public class PlayerControl : MonoBehaviour {
     {
     }
 
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        m_State.OnCollisionEnter2D(col);
-    }
-
     void OnTriggerEnter2D(Collider2D col)
     {
-        m_State.OnTriggerEnter2D(col);
+        m_State.OnTriggerEnter2D(_Collider, col);
     }
 
-    public void GroundCollision(Collider2D col)
+    void OnTriggerExit2D(Collider2D col)
     {
-        m_State.GroundCollision(col);
+        m_State.OnTriggerExit2D(_Collider, col);
     }
 
-    public void SlideCollision(Collider2D col)
+    public void GroundCollisionEnter(Collider2D col)
     {
-        m_State.SlideCollision(col);
+        CollisionCount++;
+        JumpCount = 1;
+        ChangeState(new RunningState(this, col));
     }
 
-    public void GroundCollisionExit(Collider2D col)
+    public void CollisionExit()
     {
-        m_State.GroundCollisionExit(col);
+        CollisionCount--;
+        if (CollisionCount <= 0)
+        {
+            JumpCount = 0;
+            ChangeState(new AirState(this));
+        }
     }
 
-    public void SlideCollisionExit(Collider2D col)
+    public void SlideCollisionEnter(Collider2D col)
     {
-        m_State.SlideCollisionExit(col);
-    }
-
-    public void ObstacleTriggerCheck(Collider2D col)
-    {
+        CollisionCount++;
+        JumpCount = 1;
+        ChangeState(new SlideState(this, col));
     }
 
     public void StepGround(IStepable stepable)
