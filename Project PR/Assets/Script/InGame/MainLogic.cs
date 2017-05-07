@@ -35,7 +35,15 @@ public class MainLogic : MonoBehaviour {
         }
 
         if (m_IsDrawing)
-            SetTempLineEndPosition(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        {
+            m_Line.EndPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            if(m_Line.EndPosition.y < -260)
+            {
+                m_IsDrawing = false;
+                Destroy(m_Line.gameObject);
+            }
+        }
 
         if (Input.GetMouseButtonUp(0) && m_IsDrawing)
         {
@@ -52,14 +60,6 @@ public class MainLogic : MonoBehaviour {
 
         m_Line.gameObject.transform.localPosition = _StartPos;
         m_Line.gameObject.transform.localScale = Vector3.one;
-    }
-    
-    void SetTempLineEndPosition(Vector2 endPos)
-    {
-        if(m_Line != null)
-        {
-            m_Line.EndPosition = endPos;
-        }
     }
 
     public void GameReset()
