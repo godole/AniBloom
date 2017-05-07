@@ -11,7 +11,11 @@ public class SlideState : IState {
         m_PlayerControl = pc;
         m_PlayerControl._Animator.SetInteger("State", (int)PlayerControl.PlayerAnimation.Slide);
         m_PlayerControl.StepGround(col.gameObject.GetComponent<IStepable>());
-        pc.gameObject.transform.rotation = col.gameObject.transform.rotation;
+
+        RectTransform tr = pc.gameObject.GetComponent<RectTransform>();
+
+        if(tr.position.y - tr.rect.height * 100 / 2 < col.gameObject.GetComponent<SlideLine>().EndPosition.y)
+            pc.gameObject.transform.rotation = col.gameObject.transform.rotation;
     }
 
     public void StateUpdate()
@@ -32,8 +36,8 @@ public class SlideState : IState {
             if (target.transform.tag == "Obstacle")
                 m_PlayerControl.Hit();
 
-            else if (target.transform.tag == "Ground")
-                m_PlayerControl.GroundCollisionEnter(target);
+           /* else if (target.transform.tag == "Ground")
+                m_PlayerControl.GroundCollisionEnter(target);*/
 
             else if (target.transform.tag == "Slide")
                 m_PlayerControl.SlideCollisionEnter(target);

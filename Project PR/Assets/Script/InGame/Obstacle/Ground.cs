@@ -48,7 +48,7 @@ public class Ground : MonoBehaviour,
         float b = playerTransform.position.x - gameObject.transform.position.x;
         float a = Mathf.Tan(Angle * Mathf.Deg2Rad) * b;
 
-        return new Vector2(playerTransform.position.x, gameObject.transform.position.y + a);
+        return new Vector2(playerTransform.position.x, gameObject.transform.position.y + a + playerTransform.rect.height * 100 / 2);
     }
 
     public Vector2 CalcMoveVector(RectTransform playerTransform, float maxSpeed)

@@ -165,7 +165,7 @@ public class PlayerControl : MonoBehaviour {
         
         Vector2 stepPosition = stepable.CalcStepPoint(pt as RectTransform);
 
-        pt.position = stepPosition + new Vector2(0, pt.rect.height * 100 / 2);
+        pt.position = stepPosition;
         MoveVector = stepable.CalcMoveVector(pt, MaxSpeed);
     }
 
