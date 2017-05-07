@@ -11,8 +11,8 @@ public class JumpButton : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+        
+    }
 
     void OnPress(bool IsDown)
     {

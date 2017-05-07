@@ -126,7 +126,15 @@ public class PlayerControl : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        m_State.OnTriggerEnter2D(_Collider, col);
+        if(col.tag == "DeadTrigger")
+        {
+            SceneManager.LoadScene("InGame");
+        }
+
+        else
+        {
+            m_State.OnTriggerEnter2D(_Collider, col);
+        }
     }
 
     void OnTriggerExit2D(Collider2D col)
