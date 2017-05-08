@@ -36,8 +36,8 @@ public class SlideState : IState {
             if (target.transform.tag == "Obstacle")
                 m_PlayerControl.Hit();
 
-           /* else if (target.transform.tag == "Ground")
-                m_PlayerControl.GroundCollisionEnter(target);*/
+            else if (target.transform.tag == "Ground")
+                m_PlayerControl.CollisionCount++;
 
             else if (target.transform.tag == "Slide")
                 m_PlayerControl.SlideCollisionEnter(target);
@@ -46,9 +46,13 @@ public class SlideState : IState {
 
     public void OnTriggerExit2D(Collider2D col, Collider2D target)
     {
-        if(col.transform.tag == "Player" && target.transform.tag == "Slide")
-            m_PlayerControl.gameObject.transform.rotation = new Quaternion(0, 0, 0, 1);
-
-        m_PlayerControl.CollisionExit();
+        if(col.transform.tag == "Player")
+        {
+            if(target.transform.tag == "Slide")
+            {
+                m_PlayerControl.gameObject.transform.rotation = new Quaternion(0, 0, 0, 1);
+            }
+            m_PlayerControl.CollisionExit();
+        }
     }
 }

@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 224: {fileID: 22428994}
   - 61: {fileID: 6179784}
-  - 251: {fileID: 25143578}
   - 82: {fileID: 8272140}
   - 114: {fileID: 11472226}
   - 222: {fileID: 22292454}
@@ -32,7 +31,7 @@ GameObject:
   - 61: {fileID: 6159258}
   m_Layer: 8
   m_Name: DeadTrigger
-  m_TagString: Untagged
+  m_TagString: DeadTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,7 +63,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 250, y: 0}
   serializedVersion: 2
-  m_Size: {x: 500, y: 100}
+  m_Size: {x: 500, y: 0.0001}
 --- !u!82 &8272140
 AudioSource:
   m_ObjectHideFlags: 1
@@ -178,6 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Width: 500
+  _Height: 0
 --- !u!222 &22292454
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -200,7 +200,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 1906, y: -48.300003}
-  m_SizeDelta: {x: 500, y: 47}
+  m_SizeDelta: {x: 500, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &22482372
 RectTransform:
@@ -219,23 +219,6 @@ RectTransform:
   m_AnchoredPosition: {x: -250, y: 23.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!251 &25143578
-PlatformEffector2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151804}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_UseOneWay: 1
-  m_UseOneWayGrouping: 0
-  m_SurfaceArc: 90
-  m_UseSideFriction: 0
-  m_UseSideBounce: 0
-  m_SideArc: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -12,6 +12,7 @@ TagManager:
   - Obstacle
   - DoubleJump
   - Bell
+  - DeadTrigger
   layers:
   - Default
   - TransparentFX
