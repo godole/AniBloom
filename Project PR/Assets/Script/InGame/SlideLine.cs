@@ -58,11 +58,11 @@ public class SlideLine : MonoBehaviour,
     {
         Vector2 deltaPos = EndPosition - StartPosition;
         float angle = Mathf.Atan2(deltaPos.y, deltaPos.x);
-        float b = playerTransform.position.x - StartPosition.x;
-        float a = Mathf.Tan(angle) * b;
+        float xdelta = playerTransform.position.x - StartPosition.x;
+        float ydelta = (xdelta / deltaPos.x) * deltaPos.y;
         float s = Mathf.Sin((90 * Mathf.Deg2Rad) - angle);
 
-        return new Vector2(playerTransform.position.x, a + StartPosition.y + playerTransform.rect.height * 100 / 2 / s);
+        return new Vector2(playerTransform.position.x, ydelta + StartPosition.y + playerTransform.rect.height * 100 / 2 / s);
     }
 
     public Vector2 CalcMoveVector(RectTransform playerTransform, float maxSpeed)

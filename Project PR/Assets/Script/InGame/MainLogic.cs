@@ -55,7 +55,7 @@ public class MainLogic : MonoBehaviour {
     void CreateTempLine(Vector2 startPos)
     {
         Vector3 _StartPos = (Vector3)startPos + new Vector3(0, 0, 5);
-        m_Line = Instantiate<SlideLine>(m_LinePrefab);
+        m_Line = Instantiate(m_LinePrefab);
         m_Line.StartPosition = startPos;
 
         m_Line.gameObject.transform.localPosition = _StartPos;
