@@ -39,11 +39,13 @@ public class AirState : IState {
             else if (target.transform.tag == "Fever")
                 m_PlayerControl.ChangeState(new FeverState(m_PlayerControl));
 
-            else if (target.transform.tag == "Ground")
-                m_PlayerControl.GroundCollisionEnter(target);
+            else if (target.transform.tag == "Ground" ||
+                target.transform.tag == "Platform")
+                m_PlayerControl.ChangeState(new RunningState(m_PlayerControl, target));
 
-            else if (target.transform.tag == "Slide")
-                m_PlayerControl.SlideCollisionEnter(target);
+            else if (target.transform.tag == "Slide" ||
+                target.transform.tag == "SlideCheck")
+                m_PlayerControl.ChangeState(new SlideState(m_PlayerControl, target));
 
             else if (target.transform.tag == "Rope")
                 m_PlayerControl.ChangeState(new LopeState(m_PlayerControl, target));

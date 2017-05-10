@@ -3,6 +3,7 @@ using System.Collections;
 
 public class JumpButton : MonoBehaviour {
     PlayerControl pc;
+    bool _IsDown = false;
 
 	// Use this for initialization
 	void Start () {
@@ -11,7 +12,8 @@ public class JumpButton : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
+        if(_IsDown)
+            pc.JumpJudge();
     }
 
     void OnPress(bool IsDown)
@@ -19,10 +21,13 @@ public class JumpButton : MonoBehaviour {
         if (Cutscene._IsPlayingCutscene)
             return;
 
-        if(IsDown)
-            pc.JumpJudge();
+        if (IsDown)
+            _IsDown = true;
 
         else
+        {
+            _IsDown = false;
             pc.JumpEndJudge();
+        }
     }
 }

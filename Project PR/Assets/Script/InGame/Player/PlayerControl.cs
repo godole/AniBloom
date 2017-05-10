@@ -142,30 +142,6 @@ public class PlayerControl : MonoBehaviour {
         m_State.OnTriggerExit2D(_Collider, col);
     }
 
-    public void GroundCollisionEnter(Collider2D col)
-    {
-        CollisionCount++;
-        JumpCount = 1;
-        ChangeState(new RunningState(this, col));
-    }
-
-    public void CollisionExit()
-    {
-        CollisionCount--;
-        if (CollisionCount <= 0)
-        {
-            JumpCount = 0;
-            ChangeState(new AirState(this));
-        }
-    }
-
-    public void SlideCollisionEnter(Collider2D col)
-    {
-        CollisionCount++;
-        JumpCount = 1;
-        ChangeState(new SlideState(this, col));
-    }
-
     public void StepGround(IStepable stepable)
     {
         GravityValue = 0;

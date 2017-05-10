@@ -38,7 +38,7 @@ public class MainLogic : MonoBehaviour {
         {
             m_Line.EndPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            if(m_Line.EndPosition.y < -260)
+            if(m_Line.EndPosition.y < -160)
             {
                 m_IsDrawing = false;
                 Destroy(m_Line.gameObject);
