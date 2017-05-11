@@ -55,7 +55,7 @@ MonoBehaviour:
     paddingTop: 541
     paddingBottom: 9
   - name: btn_pause
-    x: 0
+    x: 101
     y: 184
     width: 77
     height: 77
@@ -81,14 +81,40 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: popup_btn_background
-    x: 367
-    y: 416
+    x: 0
+    y: 64
     width: 97
     height: 96
     borderLeft: 30
     borderRight: 30
     borderTop: 30
     borderBottom: 30
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: slidegauge_background
+    x: 367
+    y: 412
+    width: 100
+    height: 100
+    borderLeft: 15
+    borderRight: 15
+    borderTop: 15
+    borderBottom: 15
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: slidegauge_foreground
+    x: 0
+    y: 161
+    width: 100
+    height: 100
+    borderLeft: 15
+    borderRight: 15
+    borderTop: 15
+    borderBottom: 15
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
@@ -108,7 +134,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: ui_playerpos
     x: 367
-    y: 380
+    y: 376
     width: 31
     height: 35
     borderLeft: 0
@@ -159,7 +185,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: ui_resume_icon
-    x: 465
+    x: 468
     y: 437
     width: 34
     height: 38
@@ -172,7 +198,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: ui_return_icon
-    x: 465
+    x: 468
     y: 476
     width: 43
     height: 36

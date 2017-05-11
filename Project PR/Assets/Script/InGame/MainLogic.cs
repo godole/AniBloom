@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class MainLogic : MonoBehaviour {
     [SerializeField]
@@ -10,14 +11,37 @@ public class MainLogic : MonoBehaviour {
     [SerializeField]
     Camera m_MainCamera;
 
+    [System.Serializable]
+    public class SlideEvent : UnityEvent<float> { }
+
+    [SerializeField]
+    public SlideEvent SlideChangeEvent;
+
     SlideLine m_Line;
 
     bool m_IsDrawing = false;
     public Vector2 _DeltaPos { get; set; }
 
+    public float _MaxSlideTime;
+    float _CurSlideTime;
+    float CurSlideTime
+    {
+        get { return _CurSlideTime; }
+        set
+        {
+            _CurSlideTime = value;
+
+            if (_CurSlideTime < 0.0f)
+                _CurSlideTime = 0.0f;
+
+            else if (_CurSlideTime > _MaxSlideTime)
+                _CurSlideTime = _MaxSlideTime;
+        }
+    }
+
     // Use this for initialization
     void Start() {
-        
+        _CurSlideTime = _MaxSlideTime;
     }
 
     // Update is called once per frame
@@ -36,9 +60,13 @@ public class MainLogic : MonoBehaviour {
 
         if (m_IsDrawing)
         {
+            CurSlideTime -= Time.deltaTime;
+            SlideChangeEvent.Invoke(CurSlideTime / _MaxSlideTime);
+
             m_Line.EndPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            if(m_Line.EndPosition.y < -160)
+            if(m_Line.EndPosition.y < -160 ||
+                _CurSlideTime <= 0.0f)
             {
                 m_IsDrawing = false;
                 Destroy(m_Line.gameObject);
@@ -49,6 +77,11 @@ public class MainLogic : MonoBehaviour {
         {
             m_IsDrawing = false;
             m_Line.DrawEnd();
+        }
+
+        if(!m_IsDrawing)
+        {
+            SlideChangeEvent.Invoke(CurSlideTime / _MaxSlideTime);
         }
     }
 
