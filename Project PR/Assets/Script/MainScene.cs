@@ -11,16 +11,9 @@ public class MainScene : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+	    if(Input.GetMouseButtonDown(0))
+        {
+            SceneManager.LoadScene("Menu");
+        }
 	}
-
-    public void ChangeSceneToGame()
-    {
-        SceneManager.LoadScene("InGame");
-    }
-
-    public void ChangeSceneToEdit()
-    {
-        SceneManager.LoadScene("Edit Mode");
-    }
 }

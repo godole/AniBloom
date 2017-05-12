@@ -232,6 +232,7 @@
     <Compile Include="Assets\Script\ScreenResolution.cs" />
     <Compile Include="Assets\ScrollBackground.cs" />
     <Compile Include="Assets\SlideCallback.cs" />
+    <Compile Include="Assets\WorldBubble.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />
