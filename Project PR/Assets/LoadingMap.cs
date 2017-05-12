@@ -13,7 +13,9 @@ public class LoadingMap : MonoBehaviour {
     void Awake () {
         Time.timeScale = 1.0f;
 
-        
+        ChangeValue();
+
+
         /*MapData data = LoadFromMapData("stage1");
 
         float t = 60.0f / data.BPM / 2;
@@ -59,11 +61,16 @@ public class LoadingMap : MonoBehaviour {
 
     public void OnValidate()
     {
+        ChangeValue();
+    }
+
+    void ChangeValue()
+    {
         PlayerControl pc = GameObject.Find("Player").GetComponent<PlayerControl>();
 
         float t = 60.0f / _BPM / 2;
         float a = 2 * JumpPower / Mathf.Pow(t, 2);
-        float movespeed = Mathf.Pow((_BPM / 60.0f), 2.0f) * 150;
+        float movespeed = Mathf.Pow((_BPM / 60.0f), 2.0f) * 200;
 
         pc.GravityScale = a;
         pc.JumpForce = -(JumpPower - (a * t * 0.5f)) / t;

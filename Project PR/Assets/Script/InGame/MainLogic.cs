@@ -70,6 +70,7 @@ public class MainLogic : MonoBehaviour {
             {
                 m_IsDrawing = false;
                 Destroy(m_Line.gameObject);
+                GameObject.Find("Player").GetComponent<PlayerControl>().SlideEnd();
             }
         }
 
@@ -97,9 +98,7 @@ public class MainLogic : MonoBehaviour {
 
     public void GameReset()
     {
-        SceneManager.LoadScene("InGame");
-        //LopeManager.getInstance().Clear();
-        //m_Player.Reset();
+        SceneManager.LoadScene("Test");
     }
 
     public void Pause()

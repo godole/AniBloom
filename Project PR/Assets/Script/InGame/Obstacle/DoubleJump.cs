@@ -22,5 +22,6 @@ public class DoubleJump : MonoBehaviour
     public bool IsJudged
     {
         get { return m_IsJudged; }
+        set { m_IsJudged = value; }
     }
 }

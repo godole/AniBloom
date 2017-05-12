@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using UnityEngine.SceneManagement;
 
 public class SlideState : IState {
 
@@ -57,5 +58,15 @@ public class SlideState : IState {
             m_PlayerControl.ChangeState(new AirState(m_PlayerControl));
             m_PlayerControl.gameObject.transform.rotation = new Quaternion(0, 0, 0, 1);
         }
+    }
+
+    public void SlideEnd()
+    {
+        m_PlayerControl.ChangeState(new AirState(m_PlayerControl));
+    }
+
+    public void Hit()
+    {
+        SceneManager.LoadScene("Test");
     }
 }

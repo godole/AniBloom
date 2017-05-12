@@ -26,8 +26,6 @@ public class PlayerControl : MonoBehaviour {
     float m_GravityValue = 0.0f;
 
     IState m_State;
-    UILabel _JudgeText;
-    UILabel _Combo;
 
     public int JumpCount { get; set; }
 
@@ -55,8 +53,6 @@ public class PlayerControl : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        _JudgeText = GameObject.Find("JudgeText").GetComponent<UILabel>();
-        _Combo = GameObject.Find("Combo").GetComponent<UILabel>();
         _ObstacleManager = GameObject.Find("Obstacle Manager").GetComponent<ObstacleManager>();
         m_RigidBody = GetComponent<Rigidbody2D>();
         _Collider = GetComponent<BoxCollider2D>();
@@ -76,8 +72,6 @@ public class PlayerControl : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        _Combo.text = _ComboCount.ToString();
-        _JudgeText.text = CollisionCount.ToString();
         m_State.StateUpdate();
     }
 
@@ -85,9 +79,6 @@ public class PlayerControl : MonoBehaviour {
     {
         if (JumpCount <= 0)
             return;
-
-        if(isPlayJumpSound)
-            m_JumpSound.Play();
 
         MoveVector += new Vector2(0, JumpForce);
         GravityValue = JumpForce;
@@ -115,7 +106,6 @@ public class PlayerControl : MonoBehaviour {
 
         if (!bIsJudged)
         {
-            _JudgeText.text = string.Empty;
             m_State.Jump();
         }
     }
@@ -124,11 +114,16 @@ public class PlayerControl : MonoBehaviour {
     {
     }
 
+    public void SlideEnd()
+    {
+        m_State.SlideEnd();
+    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if(col.tag == "DeadTrigger")
         {
-            SceneManager.LoadScene("InGame");
+            Hit();
         }
 
         else
@@ -163,34 +158,13 @@ public class PlayerControl : MonoBehaviour {
 
     public void Hit()
     {
-        Notify();
-        SceneManager.LoadScene("InGame");
-    }
-
-    public void Reset()
-    {
+        m_State.Hit();
     }
 
     public void ChangeState(IState state)
     {
         if(m_State.GetType() != state.GetType())
             m_State = state;
-    }
-
-    public void AddListener(IHit hit)
-    {
-        m_Listeners.Add(hit);
-    }
-
-    public void Notify()
-    {
-        foreach (IHit obj in m_Listeners)
-            obj.PlayerHit();
-    }
-
-    public void DeadFromSpring()
-    {
-        SceneManager.LoadScene("InGame");
     }
 
     public Vector2 MoveVector

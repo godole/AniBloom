@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using UnityEngine.SceneManagement;
 
 public class RunningState : IState{
 
@@ -57,5 +58,14 @@ public class RunningState : IState{
     {
         if(_CurSlideCol.Equals(target))
             m_PlayerControl.ChangeState(new AirState(m_PlayerControl));
+    }
+
+    public void SlideEnd()
+    {
+    }
+
+    public void Hit()
+    {
+        SceneManager.LoadScene("Test");
     }
 }

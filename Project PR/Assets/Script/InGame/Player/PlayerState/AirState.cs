@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using UnityEngine.SceneManagement;
 
 public class AirState : IState {
 
@@ -34,7 +35,14 @@ public class AirState : IState {
                 m_PlayerControl.Hit();
 
             else if (target.transform.tag == "DoubleJump")
-                m_PlayerControl.JumpCount++;
+            {
+                var dj = target.gameObject.GetComponent<DoubleJump>();
+                if (!dj.IsJudged)
+                {
+                    dj.IsJudged = true;
+                    m_PlayerControl.JumpCount++;
+                }
+            }
 
             else if (target.transform.tag == "Fever")
                 m_PlayerControl.ChangeState(new FeverState(m_PlayerControl));
@@ -55,5 +63,14 @@ public class AirState : IState {
     public void OnTriggerExit2D(Collider2D col, Collider2D target)
     {
         
+    }
+
+    public void SlideEnd()
+    {
+    }
+
+    public void Hit()
+    {
+        SceneManager.LoadScene("Test");
     }
 }

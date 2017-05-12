@@ -40,4 +40,13 @@ public class FeverState : IState {
     {
         
     }
+
+    public void SlideEnd()
+    {
+    }
+
+    public void Hit()
+    {
+        
+    }
 }

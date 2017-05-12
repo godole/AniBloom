@@ -88,7 +88,7 @@ public class Spring : MonoBehaviour{
     {
         if(m_bIsStart)
         {
-            pc.DeadFromSpring();
+            pc.Hit();
         }
     }
 

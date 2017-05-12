@@ -18,6 +18,8 @@ public class Platform : MonoBehaviour,
     void Awake () {
         m_Collider2D = GetComponent<BoxCollider2D>();
         m_Transform = GetComponent<RectTransform>();
+
+        Width = _Width;
     }
 
     public void OnValidate()
@@ -28,6 +30,11 @@ public class Platform : MonoBehaviour,
         if (m_Transform == null)
             m_Transform = gameObject.GetComponent<RectTransform>();
 
+        ChangeValue();
+    }
+
+    void ChangeValue()
+    {
         Width = _Width;
     }
 

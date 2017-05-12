@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using UnityEngine.SceneManagement;
 
 public class LopeState : IState {
 
@@ -51,5 +52,14 @@ public class LopeState : IState {
 
     public void OnTriggerExit2D(Collider2D col, Collider2D target)
     {
+    }
+
+    public void SlideEnd()
+    {
+    }
+
+    public void Hit()
+    {
+        SceneManager.LoadScene("Test");
     }
 }

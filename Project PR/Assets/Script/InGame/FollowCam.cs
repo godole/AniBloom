@@ -14,12 +14,12 @@ public class FollowCam : MonoBehaviour {
     {
         Vector3 delta = pc.gameObject.transform.localPosition + m_DeltaPos;
 
-        if (delta.y + 360 > 600)
-            delta.y = 600 - 360;
+        if (delta.y + 360 > 455)
+            delta.y = 455 - 360;
 
         else if (delta.y < -240)
             delta.y = -240;
 
-        gameObject.transform.localPosition = new Vector3(delta.x, delta.y, delta.z);
+        gameObject.transform.localPosition = new Vector3(delta.x, gameObject.transform.localPosition.y, delta.z);
     }
 }
