@@ -5,6 +5,7 @@ using System;
 public class FeverState : IState {
 
     PlayerControl m_PlayerControl;
+    GameObject[] fevers;
 
     float m_BoostTime;
 
@@ -13,6 +14,7 @@ public class FeverState : IState {
         m_PlayerControl = pc;
         m_PlayerControl._Animator.SetInteger("State", (int)PlayerControl.PlayerAnimation.Fever);
         pc.MoveVector = new Vector2(pc.MaxSpeed, 0.0f);
+        fevers = GameObject.FindGameObjectsWithTag("Fever");
     }
 
     public void StateUpdate()
@@ -24,12 +26,24 @@ public class FeverState : IState {
             m_PlayerControl.GravityValue = 0.0f;
             m_PlayerControl.ChangeState(new AirState(m_PlayerControl));
         }
+
+        for (int i = 0; i < fevers.Length; i++)
+        {
+            var feverTransform = fevers[i].GetComponent<RectTransform>();
+            if (Vector2.Distance(feverTransform.position, m_PlayerControl.gameObject.transform.position) < feverTransform.sizeDelta.x)
+            {
+                m_PlayerControl.ChangeState(new FeverState(m_PlayerControl));
+            }
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D col, Collider2D target)
     {
-        if (col.transform.tag == "Player" && target.transform.tag == "Fever")
-            m_PlayerControl.ChangeState(new FeverState(m_PlayerControl));
+        if (col.transform.tag == "FeverCheck")
+        {
+            if (target.transform.tag == "Fever")
+                m_PlayerControl.ChangeState(new FeverState(m_PlayerControl));
+        }
     }
 
     public void OnTriggerExit2D(Collider2D col, Collider2D target)

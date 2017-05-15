@@ -46,8 +46,6 @@ public class MainLogic : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (Cutscene._IsPlayingCutscene)
-            return;
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -88,6 +86,7 @@ public class MainLogic : MonoBehaviour {
 
     void CreateTempLine(Vector2 startPos)
     {
+        
         Vector3 _StartPos = (Vector3)startPos + new Vector3(0, 0, 5);
         m_Line = Instantiate(m_LinePrefab);
         m_Line.StartPosition = startPos;

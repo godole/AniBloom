@@ -63,12 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BGM.cs" />
-    <Compile Include="Assets\Cutscene.cs" />
-    <Compile Include="Assets\CutsceneManager.cs" />
-    <Compile Include="Assets\JumpButton.cs" />
-    <Compile Include="Assets\LoadingMap.cs" />
-    <Compile Include="Assets\MenuPopup.cs" />
     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />
     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\UICursor.cs" />
@@ -206,7 +200,6 @@
     <Compile Include="Assets\NGUI\Scripts\UI\UITexture.cs" />
     <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
     <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
-    <Compile Include="Assets\ObstacleManager.cs" />
     <Compile Include="Assets\Script\InGame\FollowCam.cs" />
     <Compile Include="Assets\Script\InGame\JsonData.cs" />
     <Compile Include="Assets\Script\InGame\MainLogic.cs" />
@@ -221,6 +214,7 @@
     <Compile Include="Assets\Script\InGame\Obstacle\Rope.cs" />
     <Compile Include="Assets\Script\InGame\Obstacle\Spring.cs" />
     <Compile Include="Assets\Script\InGame\Player\PlayerControl.cs" />
+    <Compile Include="Assets\Script\InGame\Player\PlayerFeverTrigger.cs" />
     <Compile Include="Assets\Script\InGame\Player\PlayerState\AirState.cs" />
     <Compile Include="Assets\Script\InGame\Player\PlayerState\FeverState.cs" />
     <Compile Include="Assets\Script\InGame\Player\PlayerState\IState.cs" />
@@ -228,11 +222,14 @@
     <Compile Include="Assets\Script\InGame\Player\PlayerState\RunningState.cs" />
     <Compile Include="Assets\Script\InGame\Player\PlayerState\SlideState.cs" />
     <Compile Include="Assets\Script\InGame\SlideLine.cs" />
+    <Compile Include="Assets\Script\JumpButton.cs" />
+    <Compile Include="Assets\Script\LoadingMap.cs" />
     <Compile Include="Assets\Script\MainScene.cs" />
+    <Compile Include="Assets\Script\MenuPopup.cs" />
+    <Compile Include="Assets\Script\ObstacleManager.cs" />
     <Compile Include="Assets\Script\ScreenResolution.cs" />
-    <Compile Include="Assets\ScrollBackground.cs" />
-    <Compile Include="Assets\SlideCallback.cs" />
-    <Compile Include="Assets\WorldBubble.cs" />
+    <Compile Include="Assets\Script\ScrollBackground.cs" />
+    <Compile Include="Assets\Script\WordBubble.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />

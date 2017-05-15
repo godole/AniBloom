@@ -13,6 +13,7 @@ TagManager:
   - DoubleJump
   - Fever
   - DeadTrigger
+  - Bell
   layers:
   - Default
   - TransparentFX

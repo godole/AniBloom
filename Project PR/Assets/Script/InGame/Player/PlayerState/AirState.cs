@@ -7,10 +7,14 @@ public class AirState : IState {
 
     PlayerControl m_PlayerControl;
 
+    //cache
+    GameObject[] fevers;
+
     public AirState(PlayerControl pc)
     {
         m_PlayerControl = pc;
         m_PlayerControl._Animator.SetInteger("State", (int)PlayerControl.PlayerAnimation.Jump);
+        fevers = GameObject.FindGameObjectsWithTag("Fever");
     }
 
     public void StateUpdate()
@@ -20,6 +24,16 @@ public class AirState : IState {
 
         if (m_PlayerControl.gameObject.transform.localPosition.y > 1200)
             m_PlayerControl.gameObject.transform.localPosition = new Vector3(m_PlayerControl.gameObject.transform.localPosition.x, 600, m_PlayerControl.gameObject.transform.localPosition.z);
+
+        
+        for(int i = 0; i < fevers.Length; i++)
+        {
+            var feverTransform = fevers[i].GetComponent<RectTransform>();
+            if(Vector2.Distance(feverTransform.position, m_PlayerControl.gameObject.transform.position) < feverTransform.sizeDelta.x)
+            {
+                m_PlayerControl.ChangeState(new FeverState(m_PlayerControl));
+            }
+        }
     }
 
     public void Jump()
@@ -43,9 +57,6 @@ public class AirState : IState {
                     m_PlayerControl.JumpCount++;
                 }
             }
-
-            else if (target.transform.tag == "Fever")
-                m_PlayerControl.ChangeState(new FeverState(m_PlayerControl));
 
             else if (target.transform.tag == "Ground" ||
                 target.transform.tag == "Platform")

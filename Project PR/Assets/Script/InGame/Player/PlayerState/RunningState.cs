@@ -39,9 +39,6 @@ public class RunningState : IState{
             else if (target.transform.tag == "DoubleJump")
                 m_PlayerControl.JumpCount++;
 
-            else if (target.transform.tag == "Fever")
-                m_PlayerControl.ChangeState(new FeverState(m_PlayerControl));
-
             else if (target.transform.tag == "Ground" ||
                 target.transform.tag == "Platform")
                 m_PlayerControl.ChangeState(new RunningState(m_PlayerControl, target));
@@ -51,6 +48,12 @@ public class RunningState : IState{
 
             else if (target.transform.tag == "Rope")
                 m_PlayerControl.ChangeState(new LopeState(m_PlayerControl, target));
+        }
+
+        if (col.transform.tag == "FeverCheck")
+        {
+            if (target.transform.tag == "Fever")
+                m_PlayerControl.ChangeState(new FeverState(m_PlayerControl));
         }
     }
 
