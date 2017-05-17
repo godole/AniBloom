@@ -13,7 +13,7 @@ public class MainScene : MonoBehaviour {
 	void Update () {
 	    if(Input.GetMouseButtonDown(0))
         {
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("SelectStage");
         }
 	}
 }

@@ -1,0 +1,175 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &143840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 408012}
+  - 114: {fileID: 11492668}
+  m_Layer: 0
+  m_Name: SelectStage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &408012
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143840}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11492668
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0c51bb0b6e93049af5e88f93826e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 37e3c7ea05d01fd408f515c067c99a91, type: 2}
+  mSprites:
+  - name: button
+    x: 0
+    y: 50
+    width: 40
+    height: 39
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 14
+    paddingRight: 9
+    paddingTop: 20
+    paddingBottom: 15
+  - name: line1
+    x: 3766
+    y: 1761
+    width: 116
+    height: 287
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 226
+    paddingRight: 938
+    paddingTop: 278
+    paddingBottom: 155
+  - name: line2
+    x: 1887
+    y: 887
+    width: 359
+    height: 440
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 334
+    paddingRight: 587
+    paddingTop: 124
+    paddingBottom: 156
+  - name: line3
+    x: 3168
+    y: 1545
+    width: 353
+    height: 183
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 710
+    paddingRight: 217
+    paddingTop: 91
+    paddingBottom: 446
+  - name: line4
+    x: 3883
+    y: 1859
+    width: 175
+    height: 189
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 890
+    paddingRight: 215
+    paddingTop: 261
+    paddingBottom: 270
+  - name: space
+    x: 0
+    y: 163
+    width: 1886
+    height: 1885
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 106
+    paddingRight: 56
+    paddingTop: 85
+    paddingBottom: 53
+  - name: temp
+    x: 3168
+    y: 1729
+    width: 597
+    height: 319
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: temp3
+    x: 0
+    y: 90
+    width: 912
+    height: 72
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 8
+    paddingRight: 17
+    paddingTop: 0
+    paddingBottom: 15
+  - name: worldMap
+    x: 1887
+    y: 1328
+    width: 1280
+    height: 720
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  mPixelSize: 1
+  mReplacement: {fileID: 0}
+  mCoordinates: 0
+  sprites: []
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 143840}
+  m_IsPrefabParent: 1

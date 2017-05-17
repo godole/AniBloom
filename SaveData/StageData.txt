@@ -1,0 +1,2 @@
+float ProgressRate
+int MedalCount

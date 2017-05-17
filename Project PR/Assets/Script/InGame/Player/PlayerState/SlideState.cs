@@ -69,4 +69,10 @@ public class SlideState : IState {
     {
         SceneManager.LoadScene("Test");
     }
+
+    public void JumpEnterJudge()
+    {
+        m_PlayerControl.gameObject.transform.rotation = new Quaternion(0, 0, 0, 1);
+        m_PlayerControl.Jump(true);
+    }
 }

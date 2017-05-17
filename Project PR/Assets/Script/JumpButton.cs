@@ -19,7 +19,10 @@ public class JumpButton : MonoBehaviour {
     void OnPress(bool IsDown)
     {
         if (IsDown)
+        {
             _IsDown = true;
+            pc.JumpEnterJudge();
+        }
 
         else
         {

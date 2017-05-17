@@ -21,6 +21,7 @@ public class AirState : IState {
     {
         m_PlayerControl.MoveVector = new Vector2(m_PlayerControl.MoveVector.x, m_PlayerControl.GravityValue);
         m_PlayerControl.GravityValue -= m_PlayerControl.GravityScale * Time.deltaTime;
+        m_PlayerControl._Animator.SetFloat("JumpValue", m_PlayerControl.GravityValue);
 
         if (m_PlayerControl.gameObject.transform.localPosition.y > 1200)
             m_PlayerControl.gameObject.transform.localPosition = new Vector3(m_PlayerControl.gameObject.transform.localPosition.x, 600, m_PlayerControl.gameObject.transform.localPosition.z);
@@ -38,7 +39,6 @@ public class AirState : IState {
 
     public void Jump()
     {
-        m_PlayerControl.Jump(false);
     }
 
     public void OnTriggerEnter2D(Collider2D col, Collider2D target)
@@ -49,14 +49,7 @@ public class AirState : IState {
                 m_PlayerControl.Hit();
 
             else if (target.transform.tag == "DoubleJump")
-            {
-                var dj = target.gameObject.GetComponent<DoubleJump>();
-                if (!dj.IsJudged)
-                {
-                    dj.IsJudged = true;
-                    m_PlayerControl.JumpCount++;
-                }
-            }
+                m_PlayerControl.ChangeState(new DoubleJumpState(m_PlayerControl));
 
             else if (target.transform.tag == "Ground" ||
                 target.transform.tag == "Platform")
@@ -83,5 +76,9 @@ public class AirState : IState {
     public void Hit()
     {
         SceneManager.LoadScene("Test");
+    }
+
+    public void JumpEnterJudge()
+    {
     }
 }

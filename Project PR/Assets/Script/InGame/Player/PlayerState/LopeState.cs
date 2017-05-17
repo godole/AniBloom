@@ -62,4 +62,8 @@ public class LopeState : IState {
     {
         SceneManager.LoadScene("Test");
     }
+
+    public void JumpEnterJudge()
+    {
+    }
 }

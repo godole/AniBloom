@@ -71,4 +71,9 @@ public class RunningState : IState{
     {
         SceneManager.LoadScene("Test");
     }
+
+    public void JumpEnterJudge()
+    {
+        m_PlayerControl.Jump(true);
+    }
 }

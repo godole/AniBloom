@@ -212,16 +212,17 @@
     <Compile Include="Assets\Script\InGame\Obstacle\Niddle.cs" />
     <Compile Include="Assets\Script\InGame\Obstacle\Platform.cs" />
     <Compile Include="Assets\Script\InGame\Obstacle\Rope.cs" />
+    <Compile Include="Assets\Script\InGame\Obstacle\SlideLine.cs" />
     <Compile Include="Assets\Script\InGame\Obstacle\Spring.cs" />
     <Compile Include="Assets\Script\InGame\Player\PlayerControl.cs" />
     <Compile Include="Assets\Script\InGame\Player\PlayerFeverTrigger.cs" />
     <Compile Include="Assets\Script\InGame\Player\PlayerState\AirState.cs" />
+    <Compile Include="Assets\Script\InGame\Player\PlayerState\DoubleJumpState.cs" />
     <Compile Include="Assets\Script\InGame\Player\PlayerState\FeverState.cs" />
     <Compile Include="Assets\Script\InGame\Player\PlayerState\IState.cs" />
     <Compile Include="Assets\Script\InGame\Player\PlayerState\LopeState.cs" />
     <Compile Include="Assets\Script\InGame\Player\PlayerState\RunningState.cs" />
     <Compile Include="Assets\Script\InGame\Player\PlayerState\SlideState.cs" />
-    <Compile Include="Assets\Script\InGame\SlideLine.cs" />
     <Compile Include="Assets\Script\JumpButton.cs" />
     <Compile Include="Assets\Script\LoadingMap.cs" />
     <Compile Include="Assets\Script\MainScene.cs" />
@@ -229,7 +230,14 @@
     <Compile Include="Assets\Script\ObstacleManager.cs" />
     <Compile Include="Assets\Script\ScreenResolution.cs" />
     <Compile Include="Assets\Script\ScrollBackground.cs" />
-    <Compile Include="Assets\Script\WordBubble.cs" />
+    <Compile Include="Assets\Script\SelectRegion\Region.cs" />
+    <Compile Include="Assets\Script\SelectRegion\SelectRegion.cs" />
+    <Compile Include="Assets\Script\SelectRegion\SelectedRegionName.cs" />
+    <Compile Include="Assets\Script\SelectRegion\WordBubble.cs" />
+    <Compile Include="Assets\Script\SelectStage\Keisan.cs" />
+    <Compile Include="Assets\Script\SelectStage\KeisanSpace.cs" />
+    <Compile Include="Assets\Script\SelectStage\SelectStage.cs" />
+    <Compile Include="Assets\Script\SelectStage\SelectStageWordBubble.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />

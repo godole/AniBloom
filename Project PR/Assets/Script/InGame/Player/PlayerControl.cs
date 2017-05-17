@@ -9,10 +9,6 @@ public interface IHit
 }
 
 public class PlayerControl : MonoBehaviour {
-    [SerializeField]
-    List<IHit> m_Listeners = new List<IHit>();
-    [SerializeField]
-    ObstacleManager _ObstacleManager;
 
     Rigidbody2D m_RigidBody;
     BoxCollider2D _Collider;
@@ -28,8 +24,6 @@ public class PlayerControl : MonoBehaviour {
     IState m_State;
 
     public int JumpCount { get; set; }
-
-    int _ComboCount = 0;
 
     public AudioSource m_JumpSound;
 
@@ -53,7 +47,6 @@ public class PlayerControl : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        _ObstacleManager = GameObject.Find("Obstacle Manager").GetComponent<ObstacleManager>();
         m_RigidBody = GetComponent<Rigidbody2D>();
         _Collider = GetComponent<BoxCollider2D>();
         m_JumpSound = GetComponent<AudioSource>();
@@ -73,6 +66,11 @@ public class PlayerControl : MonoBehaviour {
     void Update()
     {
         m_State.StateUpdate();
+    }
+
+    public void JumpEnterJudge()
+    {
+        m_State.JumpEnterJudge();
     }
 
     public void Jump(bool isPlayJumpSound)
@@ -102,12 +100,7 @@ public class PlayerControl : MonoBehaviour {
 
     public void JumpJudge()
     {
-        bool bIsJudged = false;
-
-        if (!bIsJudged)
-        {
-            m_State.Jump();
-        }
+        m_State.Jump();
     }
 
     public void JumpEndJudge()

@@ -112,8 +112,8 @@ public class MainLogic : MonoBehaviour {
         GameObject.Find("BGM").GetComponent<AudioSource>().Play();
     }
 
-    public void GoTitle()
+    public void GoWorldMap()
     {
-        SceneManager.LoadScene("Title");
+        SceneManager.LoadScene("SelectStage");
     }
 }
